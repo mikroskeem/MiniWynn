@@ -1,0 +1,25 @@
+group 'eu.mikroskeem'
+version '0.0.1-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven {
+        url "https://repo.wut.ee/repository/mikroskeem-repo/"
+    }
+    maven {
+        url "https://hub.spigotmc.org/nexus/content/repositories/snapshots"
+    }
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.12'
+    compileOnly group: 'org.spigotmc', name: 'spigot-api', version: '1.11.2-R0.1-SNAPSHOT'
+    compileOnly group: 'eu.mikroskeem.providerslib', name: 'api', version: '0.0.5-SNAPSHOT'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
+}
