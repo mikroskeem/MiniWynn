@@ -165,5 +165,4 @@ JVM_OPTS[${#JVM_OPTS[*]}]="-Dorg.gradle.appname=$APP_BASE_NAME"
 if [[ "$(uname)" == "Darwin" ]] && [[ "$HOME" == "$PWD" ]]; then
   cd "$(dirname "$0")"
 fi
-
 exec "$JAVACMD" "${JVM_OPTS[@]}" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
