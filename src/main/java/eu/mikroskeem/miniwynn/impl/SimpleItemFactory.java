@@ -1,7 +1,7 @@
 package eu.mikroskeem.miniwynn.impl;
 
 import eu.mikroskeem.miniwynn.ItemFactory;
-import eu.mikroskeem.miniwynn.MinyWynnPlugin;
+import eu.mikroskeem.miniwynn.MiniWynnPlugin;
 import eu.mikroskeem.miniwynn.Spell;
 import eu.mikroskeem.miniwynn.Weapon;
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +20,7 @@ public class SimpleItemFactory implements ItemFactory {
 
     @SuppressWarnings("unchecked")
     public <T extends Weapon> ItemStack getWeapon(Class<T> weapon){
-        T weaponInst = (T) weaponList.putIfAbsent(weapon, MinyWynnPlugin.getInjector().getInstance(weapon));
+        T weaponInst = (T) weaponList.putIfAbsent(weapon, MiniWynnPlugin.getInjector().getInstance(weapon));
         ItemStack item = new ItemStack(
                 weaponInst.getMaterial(),
                 1,
