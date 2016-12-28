@@ -13,7 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 @Slf4j
-public class MinyWynnPlugin extends JavaPlugin {
+public class MiniWynnPlugin extends JavaPlugin {
     @Getter private static Injector injector;
     private SimpleItemFactory itemFactory;
 
@@ -32,7 +32,7 @@ public class MinyWynnPlugin extends JavaPlugin {
         }
 
         itemFactory = injector.getInstance(SimpleItemFactory.class);
-        MinyWynnPlugin.injector = injector.createChildInjector(binder -> {
+        MiniWynnPlugin.injector = injector.createChildInjector(binder -> {
             binder.bind(Server.class).toInstance(getServer());
             binder.bind(Plugin.class).toInstance(this);
             binder.bind(ItemFactory.class).to(SimpleItemFactory.class);
