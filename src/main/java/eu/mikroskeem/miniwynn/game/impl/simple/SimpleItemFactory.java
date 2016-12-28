@@ -1,9 +1,9 @@
-package eu.mikroskeem.miniwynn.impl;
+package eu.mikroskeem.miniwynn.game.impl.simple;
 
-import eu.mikroskeem.miniwynn.ItemFactory;
+import eu.mikroskeem.miniwynn.game.ItemFactory;
 import eu.mikroskeem.miniwynn.MiniWynnPlugin;
-import eu.mikroskeem.miniwynn.Spell;
-import eu.mikroskeem.miniwynn.Weapon;
+import eu.mikroskeem.miniwynn.game.Spell;
+import eu.mikroskeem.miniwynn.game.Weapon;
 import lombok.extern.slf4j.Slf4j;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;

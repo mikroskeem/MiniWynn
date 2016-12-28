@@ -1,6 +1,6 @@
-package eu.mikroskeem.miniwynn.impl;
+package eu.mikroskeem.miniwynn.game.impl.simple;
 
-import eu.mikroskeem.miniwynn.Spell;
+import eu.mikroskeem.miniwynn.game.Spell;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.entity.Player;

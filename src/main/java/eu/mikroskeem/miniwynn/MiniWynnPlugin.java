@@ -1,7 +1,10 @@
 package eu.mikroskeem.miniwynn;
 
 import com.google.inject.Injector;
-import eu.mikroskeem.miniwynn.impl.SimpleItemFactory;
+import eu.mikroskeem.miniwynn.game.ItemFactory;
+import eu.mikroskeem.miniwynn.game.PlayerManager;
+import eu.mikroskeem.miniwynn.game.impl.simple.SimpleItemFactory;
+import eu.mikroskeem.miniwynn.game.impl.simple.SimplePlayerManager;
 import eu.mikroskeem.miniwynn.listeners.PlayerListener;
 import eu.mikroskeem.miniwynn.listeners.SpellListener;
 import eu.mikroskeem.miniwynn.listeners.bow.BowListener;
@@ -49,6 +52,7 @@ public class MiniWynnPlugin extends JavaPlugin {
             binder.bind(Server.class).toInstance(getServer());
             binder.bind(Plugin.class).toInstance(this);
             binder.bind(ItemFactory.class).toInstance(itemFactory);
+            binder.bind(PlayerManager.class).to(SimplePlayerManager.class).asEagerSingleton();
         });
 
         listeners.forEach(listener->{

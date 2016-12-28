@@ -1,4 +1,4 @@
-package eu.mikroskeem.miniwynn;
+package eu.mikroskeem.miniwynn.game;
 
 import org.bukkit.inventory.ItemStack;
 

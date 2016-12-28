@@ -1,4 +1,4 @@
-package eu.mikroskeem.miniwynn.impl.weapons.bow;
+package eu.mikroskeem.miniwynn.game.impl.weapons.bow;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,14 +11,14 @@ public class WaterBow extends AbstractBow {
 
     @Override
     public String getName() {
-        return "§bWater Bow";
+        return "§b§lWater Bow";
     }
 
     @Override
     public List<String> getLore() {
         return Arrays.asList(
-                "Mighty water bow",
-                "Makes u wet when you get hit"
+                "§7Mighty water bow",
+                "§7Makes u wet when you get hit"
         );
     }
 }
