@@ -12,6 +12,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerAnimationEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.inventory.EquipmentSlot;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -33,6 +34,8 @@ public class SpellListener implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void on(PlayerInteractEvent event){
         Player player = event.getPlayer();
+        if(event.getHand().equals(EquipmentSlot.OFF_HAND)) return;
+
         if(
                 event.getAction().equals(Action.RIGHT_CLICK_AIR) ||
                 event.getAction().equals(Action.RIGHT_CLICK_BLOCK)){
@@ -48,10 +51,9 @@ public class SpellListener implements Listener {
     }
 
     private void on(Player player, Spell.MouseClick click){
-        List<Spell.MouseClick> clicks = casts.get(player);
-        if(clicks == null){
-            clicks = casts.put(player, new LinkedList<>());
-        }
+        List<Spell.MouseClick> clicks = casts.computeIfAbsent(player, k -> new LinkedList<>());
+        casts.putIfAbsent(player, clicks);
+        log.debug("Player {} did {}", player.getName(), click);
         clicks.add(click);
         if(clicks.size() > 2){
             /* Should cast a spell */

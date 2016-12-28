@@ -24,8 +24,7 @@ public class SimpleSpell implements Spell {
 
     @Override
     public String toString() {
-        return String.format("Spell(%s)", String.join(",",
-                getPattern().stream().map(Enum::toString).collect(Collectors.toList())
-        ));
+        return String.format("SimpleSpell(%s)", String.join(",", getPattern()
+                .stream().map(Enum::toString).collect(Collectors.toList())));
     }
 }
