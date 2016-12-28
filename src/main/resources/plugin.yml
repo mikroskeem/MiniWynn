@@ -1,0 +1,9 @@
+name: MiniWynn
+version: 0.0.1
+main: eu.mikroskeem.miniwynn.MiniWynnPlugin
+author: mikroskeem
+website: https://mikroskeem.eu
+description: Mini WynnCraft weapon system made for fun
+
+depend:
+- ProvidersLib
