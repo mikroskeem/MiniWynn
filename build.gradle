@@ -1,7 +1,19 @@
 group 'eu.mikroskeem'
 version '0.0.1-SNAPSHOT'
 
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.github.jengelman.gradle.plugins:shadow:1.2.4"
+    }
+}
+
 apply plugin: 'java'
+apply plugin: "com.github.johnrengelman.shadow"
 
 sourceCompatibility = 1.8
 
@@ -23,3 +35,5 @@ dependencies {
     compileOnly group: 'eu.mikroskeem.providerslib', name: 'api', version: '0.0.5-SNAPSHOT'
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
 }
+
+build.dependsOn shadowJar
