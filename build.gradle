@@ -34,6 +34,7 @@ dependencies {
     compileOnly group: 'org.spigotmc', name: 'spigot-api', version: '1.11.2-R0.1-SNAPSHOT'
     compileOnly group: 'eu.mikroskeem.providerslib', name: 'api', version: '0.0.5-SNAPSHOT'
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.8'
 }
 
 build.dependsOn shadowJar
