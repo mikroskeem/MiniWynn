@@ -34,7 +34,7 @@ public abstract class AbstractBow implements Weapon {
             server.getScheduler().cancelTask(task);
         }, 40L);
     });
-    public static final Spell BOMB = new SimpleSpell(Arrays.asList(LEFT, RIGHT, RIGHT), (player)->{
+    public static final Spell BOMB_SPELL = new SimpleSpell(Arrays.asList(LEFT, RIGHT, RIGHT), (player)->{
         SpectralArrow sp = player.launchProjectile(SpectralArrow.class);
         sp.setKnockbackStrength(1);
     });
@@ -44,7 +44,7 @@ public abstract class AbstractBow implements Weapon {
     }
 
     @Override public List<Spell> getSpells(){
-        return Arrays.asList(ESCAPE_SPELL, RAPID_FIRE_SPELL, BOMB);
+        return Arrays.asList(ESCAPE_SPELL, RAPID_FIRE_SPELL, BOMB_SPELL);
     }
 
     @Inject private void set(Server server){
