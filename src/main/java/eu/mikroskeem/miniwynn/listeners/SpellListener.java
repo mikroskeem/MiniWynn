@@ -69,12 +69,8 @@ public class SpellListener implements Listener {
             List<Spell.MouseClick> clicks = casts.get(player, k -> new LinkedList<>());
             casts.put(player, clicks);
 
-            log.debug("Player {} did click {}", player.getName(), click);
-            log.debug("Clicks[] size: {}", clicks.size());
-
             int size = clicks.size();
             if(size == 0 && rpgClass.getSpellStartClick() != click){
-                log.debug("{} clicked attack button", player.getName());
                 if (rpgClass.getProjectile() != null) {
                     player.launchProjectile(rpgClass.getProjectile());
                 }
